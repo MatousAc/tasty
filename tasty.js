@@ -1,12 +1,12 @@
 // Ac Hybl 12/09/20 for Fundamentals of Software Design
 // this provides functionality
 
-"use strict;"
+"use strict";
 const base = "http://localhost:3000/api/v1" // the base URL for the API
 const fetchOptions = { method: "GET" } // for fetch
 let options = window.location.href.split("?")[1] // passing info between pages
 // define variables that I want accessible everywhere
-let recipes, categories,category;
+let category;
 
 // universal functions
 async function ring(route) {
@@ -21,9 +21,17 @@ function display(data, points) {
     }
 }
 
-function btn(point, parent, isRecipe) {
-    let b = dc("button"); b.innerHTML = point["name"]
-    b.setAttribute("onclick", `redirect("category.html", ${point["id"]})`)
+function btn(point, parent, isRecipe, classes = "") {
+    let b = dc("button"); b.classList = classes; let name = point["name"]
+    if (isRecipe) {
+        b.innerHTML = name;
+        b.setAttribute("onclick", `redirect("category.html", ${point["id"]})`)
+    }
+    else {
+        // console.log("name[name.length - 1]: ", name[name.length - 1])
+        b.innerHTML = singular(name);
+        b.setAttribute("onclick", `add(${point["id"]}, this)`)
+    }
     parent.appendChild(b)
 }
 
@@ -54,8 +62,8 @@ function redirect(page, id) {
 // pageload functions
 async function loadGrid(content) {
     let response = await ring(`/${content}`)
-    datapoints = response["data"]
-    console.log (datapoints)
+    let datapoints = response["data"]
+    // console.log (datapoints)
     for (let datapoint of datapoints) {
         flexbox(datapoint, dq(".grid"), content == "recipes")
     }
@@ -65,9 +73,9 @@ async function loadRecipe() {
     // get the data
     let id = JSON.parse(sessionStorage.getItem("id"))
     let response = await ring(`/recipes/${id}`)
-    recipe = response["data"][0]
-    categories = response["data"][1]
-    console.log (recipe); console.log(categories)
+    let recipe = response["data"][0]
+    let categories = response["data"][1]
+    // console.log (recipe); console.log(categories)
     // display data 
     let points = ["title", "description", "timeinvest", "servings", "ingredients", 
         "instructions", "source", "created_at", "updated_at"]
@@ -85,8 +93,8 @@ async function loadCategory() {
     let id = JSON.parse(sessionStorage.getItem("id"))
     let response = await ring(`/categories/${id}`)
     category = response["data"][0]
-    recipes = response["data"][1]
-    console.log (category); console.log(recipes)
+    let recipes = response["data"][1]
+    // console.log (category); console.log(recipes)
     // display data 
     let points = ["name"]
     await setTimeout(function (){ // I wanna do this in a better way
@@ -101,3 +109,27 @@ async function loadCategory() {
 // helpers
 function dc(tag){return document.createElement(tag)}
 function dq(selector){return document.querySelector(selector)}
+
+function singular(name) { // returns singular of word
+    let last_let = name.slice(-1)
+    if(last_let == "s"){
+        return name.slice(0, -1)
+    }
+    return name
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function wait_on_load() {
+    while(!(document.readyState === "complete")) {
+        await sleep(100)
+    }
+}

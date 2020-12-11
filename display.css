@@ -9,11 +9,11 @@
     margin: 2% 5%;
     border-radius: var(--border-radius-display-box);
     font-size: 16px;
-    opacity: 0;
-    animation: fade-in .5s ease-out 1.5s 1 forwards;
 }
 
 .display {
+    opacity: 0;
+    animation: fade-in .5s ease-out 1.5s 1 forwards;
     background: var(--color-quinary);
     color: black;
 }
@@ -135,10 +135,57 @@
 }
 
 .mealform .body {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    /* justify-content: space-between; */
     /* background-color: #0281d7; */
     /* background-color: var(--color-quinary); */
     border-radius: var(--border-radius-box-title);
     padding: 4%;
+}
+
+/* buttons */
+.mealform .body .add,
+.mealform .body .added,
+.mealform .body .build {
+    font-weight: bold;
+    border-width: 0;
+}
+.mealform .body .add {
+    background-color: var(--color-senary);
+}
+
+.mealform .body .add:hover {
+    background-color: var(--color-septenary);
+}
+
+.mealform .body .added {
+    background-color: var(--color-octonary);
+}
+
+.mealform .body .added:hover {
+    background-color: var(--color-nonary);
+}
+
+.mealform .body .build {
+    background-color: var(--color-quaternary);
+}
+
+.mealform .body .build:hover {
+    background-color: var(--color-octonary);
+}
+
+/* adding text before and after category names */
+.mealform .body button.add::before {
+    content: "Add ";
+}
+
+.mealform .body button.add::after {
+    /* content: " to meal"; */
+}
+
+.mealform .body button.added::after {
+    content: " added";
 }

@@ -7,6 +7,9 @@
     --color-quaternary: #0075C4;
     --color-quinary: #F5DDDD;
     --color-senary: #558B2F;
+    --color-septenary: #7FB800;
+    --color-octonary: #C2185B;
+    --color-nonary: #D81B60;
     /* gradients */
     --primary-gradient: linear-gradient(-5deg, var(--color-secondary), var(--color-primary));
     --tertiary-gradient: linear-gradient(-5deg, var(--color-tertiary), var(--color-quaternary));
