@@ -6,6 +6,7 @@
     --color-tertiary: #533B4D;
     --color-quaternary: #0075C4;
     --color-quinary: #F5DDDD;
+    --color-senary: #558B2F;
     /* gradients */
     --primary-gradient: linear-gradient(-5deg, var(--color-secondary), var(--color-primary));
     --tertiary-gradient: linear-gradient(-5deg, var(--color-tertiary), var(--color-quaternary));
@@ -17,4 +18,5 @@
     /* font */
     --font-size-larger: 18px;
     --font-size-large: 22px;
+    --font-size-title: 50px;
 }

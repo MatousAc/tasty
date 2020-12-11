@@ -11,28 +11,31 @@
        <link rel="preconnect" href="https://fonts.gstatic.com">
        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-       <script>loadCategory()</script>
-
     </head>
     <body>
         <!-- Navigation -->
         <div class="nav row">
             <p><a href="recipes.html">Recipes</a></p>
             <p><a href="categories.html">Categories</a></p>
-            <p><a href="meal.html">Build A Meal</a></p>
         </div>
 
         <!-- Body -->
-        <div class="display">
+        <div class="mealform">
             <div class="header">
-                <p id="name" class="name"></p>
+                <p id="title" class="title">Build a Meal</p>
+            </div>
+            <div class="body">
+                <button class="category" onclick="add(3)"></button>
+                <button class="category" onclick="add(3)"></button>
+                <button class="category" onclick="add(3)"></button>
+                <button class="category" onclick="add(3)"></button>
             </div>
             <div class="footer">
-                <p>recipes in this category:</p>
+                <p></p>
             </div>
         </div>
         
-        <div class="grid cat-grid-margin">
+        <div class="grid">
         </div>
 
     </body>

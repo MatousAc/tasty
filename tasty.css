@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
     width: 100%;
     /* padding: 0 8px; */
     background-color: var(--color-tertiary);
-    box-shadow: 0px 6px 8px #00000075;
+    box-shadow: -1px 2px 8px 3px #00000075;
     font-size: 18px;
     justify-content: flex-start;
 }

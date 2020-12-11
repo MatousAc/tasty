@@ -1,23 +1,28 @@
 /* used for display pages */
 /* styling */
-.display {
+.display,
+.mealform {
     display: flex;
     flex-direction: column;
-    background: var(--color-quinary);
     /* padding: 5%; */
     max-width: 1000px;
     margin: 2% 5%;
     border-radius: var(--border-radius-display-box);
-    color: black;
     font-size: 16px;
     opacity: 0;
     animation: fade-in .5s ease-out 1.5s 1 forwards;
 }
 
+.display {
+    background: var(--color-quinary);
+    color: black;
+}
+
 /* centering the display if the window gets too wide */
 @media only screen and (min-width: 1000px) {
     .display,
-    .cat-grid-margin {
+    .cat-grid-margin,
+    .mealform {
         margin: auto;
     }
 }
@@ -30,7 +35,7 @@
 
 .display .header {
     text-align: center;
-    font-size: 50px;
+    font-size: var(--font-size-title);
     border: 0px solid var(--color-primary);
     border-bottom-width: 6px;
 }
@@ -121,3 +126,19 @@
 #source::before {content: "From ";}
 #created_at::before{content:"Created At:";}
 #updated_at::before{content:"Updated At:";}
+
+/* mealform */
+.mealform #title {
+    font-size: var(--font-size-title);
+    text-align: center;
+    font-weight: bold;
+}
+
+.mealform .body {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #0281d7; */
+    /* background-color: var(--color-quinary); */
+    border-radius: var(--border-radius-box-title);
+    padding: 4%;
+}
