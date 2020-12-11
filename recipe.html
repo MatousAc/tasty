@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tasty Recipe</title>
+       <script src="tasty.js"></script> 
+       <link rel="stylesheet" href="tasty.css">
+       <link rel="stylesheet" href="var.css">
+       <link rel="stylesheet" href="keyframes.css">
+       <link rel="stylesheet" href="display.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+       <script>loadRecipe()</script>
+
+    </head>
+    <body>
+        <!-- Navigation -->
+        <div class="nav row">
+            <p><a href="recipes.html">Recipes</a></p>
+            <p><a href="categories.html">Categories</a></p>
+            <p><a href="meal.html">Make A Meal</a></p>
+        </div>
+
+        <!-- Body -->
+        <div class="display">
+            <div class="header">
+                <p id="title" class="title"></p>
+            </div>
+            <div class="body">
+                <div id="info" class="info">
+                    <div class="description">
+                        <p id="description"></p>
+                    </div>
+                    <div class="timeinvest">
+                        <p id="timeinvest"></p>
+                    </div>
+                    <div class="servings">
+                        <p id="servings"></p>
+                    </div>
+                    <div class="source">
+                        <p id="source"></p>
+                    </div>
+                </div>
+                <img id="imageURL">
+                <div class="ingredients">
+                    <p>Ingredients</p>
+                    <p id="ingredients"></p>
+                </div>
+                <div class="instructions">
+                    <p>Instructions</p>
+                    <p id="instructions"></p>
+                </div>
+            </div>
+            <div class="footer">
+                <p id="created_at" class="display-none"></p>
+                <p id="updated_at" class="display-none"></p>
+                <div id="categories"></div>
+                <!-- <button id="edit" onclick="redirect()">Edit Recipe</button> -->
+            </div>
+        </div>
+        
+    </body>
+</html>

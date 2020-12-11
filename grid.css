@@ -1,0 +1,57 @@
+/* styling only for recipes.html */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.flexbox {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2%;
+    opacity: 0;
+    animation: fade-in .5s ease-out .5s 1 forwards;
+}
+
+.flexbox .titlediv {
+    position: absolute;
+    width: -webkit-fill-available;
+}
+
+.flexbox .titlediv p {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding: 2% 5%;
+    background: black;
+    border-bottom-left-radius: var(--border-radius-box-title);
+    border-bottom-right-radius: var(--border-radius-box-title);
+    font-size: 16px;
+}
+
+.flexbox .description {
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+    background-image: var(--black-fade);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 50% 2% 2%;
+    /* getting the hover animation */
+    transition-duration: 0.7s;
+    opacity: 0;
+}
+
+.flexbox:hover .description {
+    opacity: 1;
+}
+
+.flexbox img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px #6e6e6e;
+}

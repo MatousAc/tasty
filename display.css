@@ -1,0 +1,115 @@
+/* used for display pages */
+/* styling */
+.display {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-quinary);
+    /* padding: 5%; */
+    max-width: 1000px;
+    margin: 2% 5%;
+    border-radius: var(--border-radius-display-box);
+    color: black;
+    font-size: 16px;
+}
+
+/* centering the display if the window gets too wide */
+@media only screen and (min-width: 1000px) {
+    .display {
+        margin: auto;
+    }
+}
+
+.display .header,
+.display .body,
+.display .footer {
+    padding: 2% 4%;
+}
+
+.display .header {
+    text-align: center;
+    font-size: 50px;
+    border: 0px solid var(--color-primary);
+    border-bottom-width: 6px;
+}
+
+.display .header p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.display .body {
+    display: grid;
+    grid-template-columns: 5fr 6fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2%;
+    grid-row-gap: 3%;
+}
+
+.display .body .description {
+    letter-spacing: 1px;
+    /* font-size: var(--font-size-larger); */
+    background-color: var(--color-tertiary);
+    padding: 5%;
+    border-radius: var(--border-radius-display-box);
+    color: white;
+}
+
+.display .body .timeinvest,
+.display .body .servings,
+.display .body .source {
+    letter-spacing: 1px;
+    width: fit-content;
+    margin: 10px 0;
+    padding: .1% 7%;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.display .body .timeinvest {
+    background: #c2c2c2;
+}
+
+.display .body .servings {
+    background: var(--color-quaternary);
+    color: white;
+}
+
+.display .body .source {
+    background: var(--color-primary);
+    color: white;
+}
+
+
+.display .body img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px #6e6e6e;
+}
+
+.display .body .ingredients p:nth-child(1),
+.display .body .instructions p:nth-child(1) {
+    font-size: var(--font-size-large);
+}
+
+.display .body .ingredients #ingredients {
+    white-space: pre;
+    line-height: 2.2;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom-right-radius: var(--border-radius-display-box);
+    border-bottom-left-radius: var(--border-radius-display-box);
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+/* inserting the correct text in places */
+#timeinvest::before {content: "Preperation Time: ";}
+#timeinvest::after {content: " min";}
+#servings::before {content: "Servings: ";}
+#source::before {content: "From ";}
+#created_at::before{content:"Created At:";}
+#updated_at::before{content:"Updated At:";}

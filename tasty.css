@@ -1,0 +1,126 @@
+/* background */
+html {
+    background-image: var(--primary-gradient);
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+body {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding: 10px;
+    padding-top: 65px ;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+/* nav */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 0 8px; */
+    background-color: var(--color-tertiary);
+    box-shadow: 0px 6px 8px #00000075;
+    font-size: 18px;
+    justify-content: flex-start;
+}
+
+.nav p {
+    padding: 0 2%;
+}
+
+.nav a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+/* buttons */
+button,
+#categories a {
+    cursor: pointer;
+    /* margin: auto; */
+    transition-duration: .5s;
+    padding: 4px 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    line-height: 1.5;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 24px;
+    color: white;
+    outline: none;
+    font-size: inherit;
+    height: fit-content;
+}
+
+button#edit:hover,
+#categories a:hover {
+    background-color: white;
+    color: var(--color-tertiary);
+}
+
+option, optgroup {
+    color: var(--color-tertiary);
+}
+
+/* general positioning styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.space-row {
+    justify-content: space-between;
+}
+
+.col-2 {
+    flex: 2;
+    max-width: 16.667%;
+}
+
+.col-3 {
+    flex: 3;
+    max-width: 25%;
+}
+
+.col-4 {
+    flex: 4;
+    max-width: 33.333%;
+}
+
+.col-6 {
+    flex: 6;
+    max-width: 50%;
+}
+
+.col-8 {
+    flex: 8;
+    max-width: 66.667%;
+}
+
+.col-10 {
+    flex: 10;
+    max-width: 83.333%;
+}
+
+/* general styles */
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+}
