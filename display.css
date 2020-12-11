@@ -10,11 +10,14 @@
     border-radius: var(--border-radius-display-box);
     color: black;
     font-size: 16px;
+    opacity: 0;
+    animation: fade-in .5s ease-out 1.5s 1 forwards;
 }
 
 /* centering the display if the window gets too wide */
 @media only screen and (min-width: 1000px) {
-    .display {
+    .display,
+    .cat-grid-margin {
         margin: auto;
     }
 }
@@ -40,9 +43,10 @@
 .display .body {
     display: grid;
     grid-template-columns: 5fr 6fr ;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 3fr;
     grid-column-gap: 2%;
     grid-row-gap: 3%;
+    margin-bottom: 4%;
 }
 
 .display .body .description {
@@ -97,13 +101,17 @@
     line-height: 2.2;
 }
 
-.footer {
+.display .footer {
     display: flex;
     justify-content: space-between;
     border-bottom-right-radius: var(--border-radius-display-box);
     border-bottom-left-radius: var(--border-radius-display-box);
     background-color: var(--color-tertiary);
     color: white;
+}
+
+.display .footer #categories {
+    display: flex;
 }
 
 /* inserting the correct text in places */

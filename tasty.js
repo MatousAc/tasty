@@ -73,7 +73,7 @@ async function loadRecipe() {
         "instructions", "source", "created_at", "updated_at"]
     await setTimeout(function (){ // I wanna do this in a better way
         display(recipe, points)
-        let image = dq("#imageURL"); image.src = (recipe["imageURL"] != "nil") ? recipe["imageURL"] : "https://cobaltfitness.co.uk/wp-content/uploads/2020/06/ingredients-for-spring-vegetable-buddha-bowl-royalty-free-image-656873420-1558126238.jpg";
+        let image = dq("#imageURL"); image.src = !((recipe["imageURL"] == "nil")|| recipe["imageURL"] == null) ? recipe["imageURL"] : "https://cobaltfitness.co.uk/wp-content/uploads/2020/06/ingredients-for-spring-vegetable-buddha-bowl-royalty-free-image-656873420-1558126238.jpg";
         for (let category of categories) {
             btn(category, dq("#categories"), true)
         }

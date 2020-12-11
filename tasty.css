@@ -24,6 +24,7 @@ body::-webkit-scrollbar {
 /* nav */
 .nav {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -48,7 +49,7 @@ body::-webkit-scrollbar {
 button,
 #categories a {
     cursor: pointer;
-    /* margin: auto; */
+    margin: 0 5%;
     transition-duration: .5s;
     padding: 4px 20px;
     text-decoration: none;
@@ -69,10 +70,6 @@ button,
 button#edit:hover,
 #categories a:hover {
     background-color: white;
-    color: var(--color-tertiary);
-}
-
-option, optgroup {
     color: var(--color-tertiary);
 }
 
