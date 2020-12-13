@@ -102,8 +102,11 @@
 }
 
 .display .body .ingredients #ingredients {
-    white-space: pre;
     line-height: 2.2;
+}
+.display .body .ingredients #ingredients,
+.display .body .instructions #instructions {
+    white-space: pre-wrap;
 }
 
 .display .footer {
