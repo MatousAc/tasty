@@ -2,7 +2,9 @@
 // this provides functionality
 
 "use strict";
-const base = "http://localhost:3000/api/v1" // the base URL for the API
+// const base = "http://localhost:3000/api/v1" // the base URL for the API
+const base = "https://tastyapi.herokuapp.com/api/v1"
+
 const fetchOptions = { method: "GET" } // for fetch
 let options = window.location.href.split("?")[1] // passing info between pages
 // define variables that I want accessible everywhere
@@ -39,7 +41,7 @@ function flexbox(point, parent, isRecipe) { // works for recipes and categories
     let box = dc("div"); box.classList.add("flexbox")
     let title = dc("p"); title.innerHTML = isRecipe ? point["title"] : point["name"]
     let titlediv = dc("div"); titlediv.classList.add("titlediv"); titlediv.appendChild(title)
-    let img = dc("img"); img.src = (isRecipe && point["imageURL"]) ? point["imageURL"] : "https://cobaltfitness.co.uk/wp-content/uploads/2020/06/ingredients-for-spring-vegetable-buddha-bowl-royalty-free-image-656873420-1558126238.jpg"; 
+    let img = dc("img"); img.src = (point["imageURL"]) ? point["imageURL"] : "https://cobaltfitness.co.uk/wp-content/uploads/2020/06/ingredients-for-spring-vegetable-buddha-bowl-royalty-free-image-656873420-1558126238.jpg"; 
     box.append(titlediv, img)
     if (isRecipe) {
         let desc = dc("p"); desc.classList.add("description"); 
@@ -63,7 +65,6 @@ function redirect(page, id) {
 async function loadGrid(content) {
     let response = await ring(`/${content}`)
     let datapoints = response["data"]
-    // console.log (datapoints)
     for (let datapoint of datapoints) {
         flexbox(datapoint, dq(".grid"), content == "recipes")
     }
@@ -75,12 +76,11 @@ async function loadRecipe() {
     let response = await ring(`/recipes/${id}`)
     let recipe = response["data"][0]
     let categories = response["data"][1]
-    // console.log (recipe); console.log(categories)
     // display data 
     let points = ["title", "description", "timeinvest", "servings", "ingredients", 
         "instructions", "source", "created_at", "updated_at"]
     await setTimeout(function (){ // I wanna do this in a better way
-        display(recipe, points)
+        display(recipe, points); hideSource()
         let image = dq("#imageURL"); image.src = !((recipe["imageURL"] == "nil")|| recipe["imageURL"] == null) ? recipe["imageURL"] : "https://cobaltfitness.co.uk/wp-content/uploads/2020/06/ingredients-for-spring-vegetable-buddha-bowl-royalty-free-image-656873420-1558126238.jpg";
         for (let category of categories) {
             btn(category, dq("#categories"), true)
@@ -103,6 +103,11 @@ async function loadCategory() {
             flexbox(recipe, dq(".grid"), true)
         }
     }, 1000)
+}
+
+function hideSource() {
+    let source = dq("#source")
+    dq(".source").classList = (source.innerHTML == "") ? "display-none" : "source"
 }
 
 
