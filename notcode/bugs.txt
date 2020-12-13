@@ -1,0 +1,14 @@
+This app definitely has some bugs. 
+
+For instance, the description for the fruit pizza recipe is so long that it causes 
+the div to overflow above the image.
+This only happens sometimes (when the image is not of portrait height) and can cause 
+a problem with clicking something above the box for the recipe preview.
+
+Another "bug" is that you are supposed to be able to click the "Build New Meal" button again
+and again and get a new combination each time, but since the selection is completely random,
+it is possible to get the same combination of recipes a second time. It would be ideal to 
+keep track of what recipes have already been displayed and not display them again. It probably 
+wouldn't be difficult to implement, but I've got no more time to do that.
+
+Other bugs may come up, but so far I haven't discovered them.

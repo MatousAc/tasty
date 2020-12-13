@@ -1,0 +1,18 @@
+Hey Prof. O. or whoever is grading this. 
+So i've got just a few minutes left to try to submit this . . . 
+But here's some useful info hopefully.
+
+Watch my tutorial on how this project works in the vidoe in the "notcode" file
+
+Back End Code: in the ZIP file go to "tasty-api"
+All my back end Ruby code is here. Most of my work was on the back end.
+You don't have to do anything with the back end however as
+my API is hosted on Heroku @ https://tastyapi.herokuapp.com/api/v1/
+
+Front End Code: in the ZIP file go to "tasty-front"
+To start my app, open the "recipes.html" file
+You can naviate to all the other pages from there.
+
+Nothing should be needed to be installed. Contact me if you have any trouble.
+
+I give credit where credit is due in the "notecode\thanks.txt"
