@@ -1,9 +1,0 @@
-// {type:class}
-// {direction:leftToRight}
-
-[Recipe|-Title:string;-Ingredients:text;-Instructions:text;-Servings:integer;-TimeInvest:integer;-ImageURL:string;-CategoryID:integer;-CreatedAt:date;-UpdatedAt:date|+index:json]
-[Category|-Name:string;-imageURL:string|+index:json]
-[Cookbook|Title:text;RecipeIDs:integer-list]
-
-[Recipe]++-[Cookbook]
-[Recipe]-[Category]
